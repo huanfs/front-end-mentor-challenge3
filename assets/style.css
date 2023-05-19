@@ -1,0 +1,135 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:rgb(223, 220, 217);
+}
+/******************CONTAINER PRINCIPAL */
+#container{
+    height:550px;
+    width:700px;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    background-color:#fff;
+    border-radius:30px 30px 150px 30px;
+}
+/******************CAMPO DE ENTRADA DE DADOS */
+#inputs{
+    height:100px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:1em;
+}
+.input{
+    height:85px;
+    display:flex;
+    flex-direction:column;
+    gap:0.5em;
+}
+.input label{
+    font-size:1.1em;
+    color:rgb(116, 116, 118);
+}
+.input input{
+    width:150px;
+    font-size:2em;
+    font-weight:bolder;
+    text-indent:20px;
+    color:rgb(116, 116, 118);
+    outline:0;
+    border:1px solid #b6b6b6;
+    border-radius:5px;
+}
+/**************MENSAGEM DE ERRO */
+.errmsg{
+    margin-top:-0.5em;
+    color:#ec0f0f;
+}
+/**************SEPARADOR DAS SEÇÕES ENTRADA/SAÍDA DE DADOS */
+#separate-icon{
+    display:flex;
+    align-items:center;
+    flex-direction:flex-end;
+    flex-wrap:no-wrap;
+}
+#separate-icon hr{
+    width:85%;
+    color:rgb(187, 184, 181);
+}
+#separate-icon img{
+    padding:20px;
+    border-radius:60px;
+    background-color:blueviolet;
+}
+#separate-icon img:hover{
+    background-color:#000;
+    cursor:pointer;
+}
+/****************SAÍDA DE DADOS */
+#outputs{
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    gap:1em;
+    font-style:italic;
+}
+.output{
+    display:flex;
+}
+.output span, .output h1{
+    font-size:5em;
+}
+.output span{
+    margin:0px 10px;
+    color:blueviolet;
+}
+.attribution{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:0.5em;
+    margin-top:3em;
+  }
+/*****************RESPONSIVIDADE EM TELAS MENORES */
+@media screen and (max-width:510px){
+    #container{
+        height:80vh;
+        width:90vw;
+    }
+    .input{
+        height:110px;
+    }
+    #separate-icon{
+        height:150px;
+        margin:30px 0;
+        overflow:hidden;
+    }
+    #separate-icon img{
+        padding:15px;
+        margin-right:50%;
+        translate:50%;
+    }
+    #separate-icon hr{
+        transform:scaleX(50);
+    }
+    .input input{
+        height:50px;
+        width:80px;
+        text-indent:2px;
+        font-size:1.5em;
+    }
+    .output span, .output h1{
+        font-size:3.5em;
+    }
+}
