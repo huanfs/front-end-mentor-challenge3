@@ -14,7 +14,6 @@ body{
 }
 /******************CONTAINER PRINCIPAL */
 #container{
-    min-width:460px;
     height:550px;
     width:700px;
     padding:40px;
@@ -94,46 +93,49 @@ body{
     margin:0px 10px;
     color:blueviolet;
 }
-.attribution{
-    width:100%;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    gap:0.5em;
-    margin-top:3em;
-  }
 /*****************RESPONSIVIDADE EM TELAS MENORES */
-@media screen and (max-width:510px){
+@media screen and (max-width:430px){
     #container{
-        height:80vh;
-        width:90vw;
+        height:40vh;
+        width:70vw;
+    }
+    #inputs{
+        margin-left:-10px;
+        margin-right:10px;
+        justify-content:space-around;
     }
     .input{
-        height:110px;
+        width:30px;
+        height:60px;
     }
     #separate-icon{
         height:170px;
-        margin:20px 0;
         overflow:hidden;
     }
     #separate-icon img{
-        padding:15px;
+        width:40px;
+        height:40px;
+        padding:5px;
         margin-right:50%;
         translate:50%;
     }
     #separate-icon hr{
         transform:scaleX(50);
     }
+    .input label{
+        font-size:12px;
+    }
     .input input{
-        height:50px;
-        width:80px;
+        height:60px;
+        width:60px;
         text-indent:2px;
-        font-size:1.5em;
+        font-size:1.1em;
     }
     .input span{
         font-size:0.7em;
     }
     .output span, .output h1{
-        font-size:3.5em;
+        font-size:2.5em;
+        font-weight:bolder;
     }
 }
