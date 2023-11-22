@@ -1,141 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+:root{
+    /*primary colors*/
+    --Purple: hsl(259, 100%, 65%);
+    --LightRed: hsl(0, 100%, 67%);
+
+    /*secondary colors*/
+    --White: hsl(0, 0%, 100%);
+    --OffWhite: hsl(0, 0%, 94%);
+    --LightGrey: hsl(0, 0%, 86%);
+    --SmokeyGrey: hsl(0, 1%, 44%);
+    --OffBlack: hsl(0, 0%, 8%);
+}
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 body{
     height:100vh;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color:rgb(223, 220, 217);
+    display:grid;
+    place-items:center;
+    font-family: 'Poppins', sans-serif;
+    background-color:var(--OffWhite);
 }
-/******************CONTAINER PRINCIPAL */
+
+/*style of container, the principal element*/
 #container{
-    height:550px;
-    width:700px;
-    padding:40px;
+    width:680px;
     display:flex;
     flex-direction:column;
-    background-color:#fff;
-    border-radius:30px 30px 150px 30px;
+    gap:1em;
+    padding:1em;
+    border-radius:20px 20px 100px 20px;
+    background-color:var(--White);
 }
-/******************CAMPO DE ENTRADA DE DADOS */
-#inputs{
-    height:100px;
+/*the content with three other divs inside him with the inputs and labels*/
+.inputs{
     display:flex;
-    align-items:center;
-    justify-content:flex-start;
     gap:1em;
 }
-.input{
-    height:85px;
+/*the single input with his label*/
+.inputs .input{
     display:flex;
     flex-direction:column;
     gap:0.5em;
 }
+/*label*/
 .input label{
-    font-size:1.1em;
-    color:rgb(116, 116, 118);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--SmokeyGrey);
 }
+/*the input tag inside div className="input"*/
 .input input{
-    width:150px;
-    font-size:2em;
-    font-weight:bolder;
-    text-indent:20px;
-    color:rgb(116, 116, 118);
+    width:110px;
+    height:50px;
+    min-width:80px;
+    font-size:35px;
+    font-weight:700;
+    text-indent:5%;
+    border-radius:10px;
     outline:0;
-    border:1px solid #b6b6b6;
-    border-radius:5px;
+    border:1px solid var(--SmokeyGrey);
 }
-/**************MENSAGEM DE ERRO */
-.errmsg{
-    margin-top:-0.5em;
-    color:#ec0f0f;
+/*on focus effect of input*/
+.input input:focus{
+    border-color:var(--Purple);
 }
-/**************SEPARADOR DAS SEÇÕES ENTRADA/SAÍDA DE DADOS */
-#separate-icon{
+
+/*div action*/
+.action{
     display:flex;
     align-items:center;
-    flex-direction:flex-end;
-    flex-wrap:no-wrap;
 }
-#separate-icon hr{
-    width:85%;
-    color:rgb(187, 184, 181);
+.action hr{
+    width:100%;
 }
-#separate-icon img{
-    padding:20px;
-    border-radius:60px;
-    background-color:blueviolet;
+.action button{
+    border:none;
+    outline:0;
+    padding:10px;
+    border-radius:50%;
+    background-color:var(--Purple);
 }
-#separate-icon img:hover{
-    background-color:#000;
+/*hover effect for action button*/
+.action button:hover{
     cursor:pointer;
+    background-color:var(--OffBlack);
 }
-/****************SAÍDA DE DADOS */
-#outputs{
-    height:400px;
+/*div class="output" houses div class="result"*/
+/* .outputs{
     display:flex;
     flex-direction:column;
     gap:1em;
-    font-style:italic;
-}
-.output{
+} */
+.result{
     display:flex;
+    align-items:center;
+    font-size:64px;
+    font-style:italic;
+    font-weight:800;
+    gap:10px;
 }
-.output span, .output h1{
-    font-size:5em;
+.result span{
+    color:var(--Purple);
 }
-.output span{
-    margin:0px 10px;
-    color:blueviolet;
-}
-/*****************RESPONSIVIDADE EM TELAS MENORES */
-@media screen and (max-width:430px){
+
+/*layout mobile*/
+@media screen and (max-width:500px){
     #container{
-        height:40vh;
-        width:70vw;
+        width:90%;
+        gap:0;
     }
-    #inputs{
-        margin-left:-10px;
-        margin-right:10px;
-        justify-content:space-around;
+    .action{
+        display:inline-block;
+        margin-top:5em;
     }
-    .input{
-        width:30px;
-        height:60px;
-    }
-    #separate-icon{
-        height:170px;
-        overflow:hidden;
-    }
-    #separate-icon img{
-        width:40px;
-        height:40px;
-        padding:5px;
-        margin-right:50%;
-        translate:50%;
-    }
-    #separate-icon hr{
-        transform:scaleX(50);
-    }
-    .input label{
-        font-size:12px;
-    }
-    .input input{
-        height:60px;
-        width:60px;
-        text-indent:2px;
-        font-size:1.1em;
-    }
-    .input span{
-        font-size:0.7em;
-    }
-    .output span, .output h1{
-        font-size:2.5em;
-        font-weight:bolder;
+    .action button{
+        position:relative;
+        bottom:2.5em;
+        left:50%;
+        transform:translateX(-50%);
     }
 }

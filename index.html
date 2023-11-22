@@ -8,45 +8,40 @@
   <link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 <body>
-<div id="container">
-  <div id="inputs">
-    <div class="input">
-      <label for="dd">DAY</label>
-      <input type="text" name="dd" placeholder="DD" class="data-in">
-      <span class="errmsg"></span>
+  <!-- main container -->
+  <div id="container">
+    <!-- div class="inputs" houses div class="input" -->
+    <div class="inputs">
+      <!-- div class input houses the label and input tag -->
+      <div class="input"><label for="day">days</label>
+      <input type="text" placeholder="DD" id="day" maxlength="2">
+      </div>
+      <div class="input"><label for="day">months</label>
+        <input type="text" placeholder="MM" id="month" maxlength="2">
+      </div>
+      <div class="input"><label for="day">years</label>
+        <input type="text" placeholder="YYYY" id="year" maxlength="4">
+      </div>
     </div>
-    <div class="input">
-      <label for="mm">MONTH</label>
-      <input type="text" name="mm" placeholder="MM" class="data-in">
-      <span class="errmsg"></span>
+    <!-- div class="action" houses an line and the action button -->
+    <div class="action">
+      <hr/>
+      <button type="button"><img src="assets/images/icon-arrow.svg"></button>
     </div>
-    <div class="input">
-      <label for="yy">YEAR</label>
-      <input type="text" name="yy" placeholder="YYYY" class="data-in">
-      <span class="errmsg"></span>
-    </div>
-  </div>
-
-  <div id="separate-icon">
-    <hr>
-    <img src="./assets/images/icon-arrow.svg">
-  </div>
-
-  <div id="outputs">
-    <div class="output">
-      <span class="data">--</span>
-      <h1>years</h1>
-    </div>
-    <div class="output">
-      <span class="data">--</span>
-      <h1>months</h1>
-    </div>
-    <div class="output">
-      <span class="data">--</span>
-      <h1>days</h1>
+    <!-- div class="outputs" houses div class="result" -->
+    <div class="outputs">
+      <!-- div class="result" houses span and paragraph -->
+      <div class ="result">
+        <span>--</span> <p>years</p>
+      </div>
+      <div class ="result">
+        <span>--</span> <p>months</p>
+      </div>
+      <div class ="result">
+        <span>--</span> <p>days</p>
+      </div>
     </div>
   </div>
-</div>
   <script src="assets/script.js"></script>
 </body>
 </html>
